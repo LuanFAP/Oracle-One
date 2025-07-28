@@ -1,3 +1,19 @@
+/*  
+Math.floor(x) --> arredonda o número para baixo, garantindo que seja um inteiro.
+
+Math.random() --> gera um número aleatório entre 0 (inclusivo) e 1 (exclusivo), para números entre 0 e 9, multiplica-se por 10 ou se quiser entre 1 para 10, basta depois da multiplicação, somar + 1.
+
+parseInt(x) --> Converte uma string ou número para inteiro, ignorando decimais.
+
+.toLowerCase() --> serve para padronizar a entrada do usuário, tornando-a minúscula.
+
+parseFloat(x) --> converte a string retornada pelo prompt em um número decimal
+
+.toFixed(2) --> formata o número para duas casas decimais
+*/
+
+
+
 alert("Bem vindo ao jogo")
 
 while (true) {
@@ -106,7 +122,8 @@ while (true) {
     ------------------------------------------------------------------------------------------
     */
     if (opcao === 6) {
-        let numeroSecreto = parseInt(Math.random() * 11); // Gera um número aleatório entre 0 e 10
+        let numeroSecreto = Math.floor(Math.random() * 11); // Gera um número aleatório entre 0 e 10
+
         let tentativas = 3;
 
         while (tentativas > 0) {
@@ -138,6 +155,18 @@ while (true) {
             }
         }
     }
+
+    /*
+    OPERADOR TERNÁRIO --> Dependendo do caso pode substituir o if/else
+
+    let palavraTentativa = tentativas > 1 ? "tentativas" : "tentativa";
+
+    Entende-se que o operador ternário é uma forma de como a gente fala no dia a dia, por exemplo:
+
+    tentativas é maior que 1 ? (pergunta) se sim, palavraTentativa recebe "tentativas" : se não, palavraTentativa recebe "tentativa"
+    
+    */
+
 
     /*
     ------------------------------------------------------------------------------------------
