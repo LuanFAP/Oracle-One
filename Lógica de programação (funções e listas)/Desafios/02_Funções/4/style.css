@@ -1,0 +1,11 @@
+button {
+  padding: 5px; /* Espaçamento interno ao redor do texto do botão */
+  border: 1px solid #ccc; /* Borda fina e cinza clara */
+  background-color: #fff; /* Fundo branco */
+  color: #333; /* Texto em cinza escuro */
+  cursor: pointer; /* Cursor de mãozinha ao passar o mouse */
+}
+
+button:hover {
+  background-color: #f4f4f4; /* Fundo cinza claro ao passar o mouse */
+}
