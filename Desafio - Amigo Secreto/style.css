@@ -1,0 +1,122 @@
+body {
+  /* Estilo para o corpo da página */
+  font-family: Arial, sans-serif;
+  background-color: #d0f5c4;
+  margin: 0;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Imagem de fundo fixa */
+  background-repeat: no-repeat;
+}
+
+/* Parte superior: título e imagem lado a lado, com fundo e borda compartilhados */
+#parteSuperiorTitulo {
+  display: flex; /* Flexbox para alinhar título e imagem lado a lado */
+  align-items: center; /* Alinha verticalmente o conteúdo */
+  justify-content: center; /* Centraliza o conteúdo */
+  gap: 60px; /* Espaçamento entre título e imagem */
+  margin: -20px;
+  margin-bottom: 30px;
+  background-color: #4caf50;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  padding: 15px;
+}
+
+/* Título sem fundo próprio, só cor do texto e tamanho */
+h1 {
+  margin: 0;
+  font-size: 50px;
+  color: #fff;
+  padding: 0;
+  font-style: italic; /* Estilo itálico para o título */
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+/* Imagem segue igual */
+#bonequinho {
+  height: 200px;
+  width: 500px;
+  border-radius: 20px;
+}
+
+/* Container dos botões */
+.botoes-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Botões - estilos comuns */
+.botao {
+  display: inline-block;
+  margin: 10px 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.botao:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  color: #ccc;
+  background-color: #888 !important; /* !important para garantir a prioridade */
+}
+
+#nomeInput {
+  /* Estilo para o campo de entrada de nome */
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #4caf50;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 18px;
+  box-sizing: border-box; /* Inclui padding e border no cálculo da largura total */
+}
+
+/* Botões - estilos individuais e efeitos */
+#adicionarBtn {
+  background-color: #4caf50;
+}
+#adicionarBtn:hover {
+  background-color: #45a049;
+}
+
+#sortearBtn {
+  background-color: #2196f3;
+}
+#sortearBtn:hover {
+  background-color: #0b7dda;
+}
+
+#limparBtn {
+  background-color: #f44336;
+}
+#limparBtn:hover {
+  background-color: #d32f2f;
+}
+
+/* Lista de nomes */
+#listaNomes {
+  margin-top: 20px;
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Itens da lista */
+#listaNomes li {
+  font-size: 18px;
+  background-color: #e0f7fa;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}

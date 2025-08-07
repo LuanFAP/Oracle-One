@@ -1,0 +1,42 @@
+<!--
+Funcionalidades:
+
+Adicionar nomes: Os usuários escreverão o nome de um amigo em um campo de texto e o adicionarão a uma lista visível ao clicar em "Adicionar".
+
+Validar entrada: Se o campo de texto estiver vazio, o programa exibirá um alerta solicitando um nome válido.
+
+Visualizar a lista: Os nomes inseridos aparecerão em uma lista abaixo do campo de entrada.
+
+Sorteio aleatório: Ao clicar no botão "Sortear Amigo", um nome da lista será selecionado aleatoriamente e exibido na página.
+
+-->
+
+<!DOCTYPE html>
+<html lang="PT-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amigo Secreto</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="parteSuperiorTitulo">
+      <h1>Amigo Secreto</h1>
+      <img src="img/amigoss.png" alt="" id="bonequinho" />
+    </div>
+
+    <input type="text" id="nomeInput" placeholder="Digite o nome do amigo" />
+    <div class="botoes-container">
+      <button id="adicionarBtn" class="botao">Adicionar</button>
+      <button id="sortearBtn" class="botao" disabled>Sortear Amigo</button>
+      <button id="limparBtn" class="botao" disabled>Limpar Lista</button>
+    </div>
+
+    <ul id="listaNomes"></ul>
+    <!-- Lista de nomes adicionados -->
+
+    <p id="resultado"></p>
+
+    <script src="app.js"></script>
+  </body>
+</html>
