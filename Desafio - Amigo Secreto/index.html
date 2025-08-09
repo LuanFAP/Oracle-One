@@ -17,25 +17,38 @@ Sorteio aleatório: Ao clicar no botão "Sortear Amigo", um nome da lista será 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amigo Secreto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- Conexão prévia com o Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Conexão prévia com o Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Creepster&family=Fredoka+One&family=Bangers&family=Press+Start+2P&family=Orbitron:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Importação de fontes do Google Fonts -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="parteSuperiorTitulo">
-      <h1>Amigo Secreto</h1>
-      <img src="img/amigoss.png" alt="" id="amigos" />
+    <div class="container">
+      <div id="parteSuperiorTitulo">
+        <div class="titulo-centralizado">
+          <h1>Amigo Secreto</h1>
+        </div>
+        <img src="img/amigoss.png" alt="Imagem dos amigos" />
+      </div>
+
+      <input type="text" id="nomeInput" placeholder="Digite o nome do amigo" />
+      <div class="botoes-container">
+        <button id="adicionarBtn" class="botao">Adicionar</button>
+        <button id="sortearBtn" class="botao" disabled>Sortear Amigo</button>
+        <button id="limparBtn" class="botao" disabled>Limpar Lista</button>
+      </div>
+
+      <ul id="listaNomes"></ul>
+      <!-- Lista de nomes adicionados -->
+
+      <p id="resultado"></p>
     </div>
-
-    <input type="text" id="nomeInput" placeholder="Digite o nome do amigo" />
-    <div class="botoes-container">
-      <button id="adicionarBtn" class="botao">Adicionar</button>
-      <button id="sortearBtn" class="botao" disabled>Sortear Amigo</button>
-      <button id="limparBtn" class="botao" disabled>Limpar Lista</button>
-    </div>
-
-    <ul id="listaNomes"></ul>
-    <!-- Lista de nomes adicionados -->
-
-    <p id="resultado"></p>
 
     <script src="app.js"></script>
   </body>

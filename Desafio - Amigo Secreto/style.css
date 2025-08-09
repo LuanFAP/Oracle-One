@@ -1,122 +1,981 @@
+/*
+===================================================================================
+📋 DOCUMENTAÇÃO DO PROCESSO DE CONSTRUÇÃO - AMIGO SECRETO CSS
+===================================================================================
+
+🎯 OBJETIVO: Criar uma interface moderna com design glassmorphism para aplicação 
+   de sorteio de amigo secreto, evoluindo de um layout simples para um design 
+   premium com efeitos visuais avançados.
+
+📈 PROCESSO DE DESENVOLVIMENTO (PASSO A PASSO):
+
+1️⃣ FASE INICIAL - CORREÇÃO DE LAYOUT
+   ✅ Problema: Título não estava centralizado e imagem mal posicionada
+   ✅ Solução: Implementado flexbox com justify-content: space-between
+   ✅ Resultado: Layout responsivo com título à esquerda e imagem à direita
+
+2️⃣ FASE ESTÉTICA - FONTES TEMÁTICAS  
+   ✅ Problema: Fonte padrão não tinha personalidade
+   ✅ Solução: Adicionadas fontes gaming (Press Start 2P, Orbitron) via Google Fonts
+   ✅ Resultado: Visual retrô/gaming que combina com o tema lúdico
+
+3️⃣ FASE VISUAL - ANIMAÇÕES COLORIDAS
+   ✅ Problema: Título estático e sem destaque
+   ✅ Solução: Gradiente linear animado com background-clip: text
+   ✅ Resultado: Título com cores que se movem dinamicamente
+
+4️⃣ FASE MODERNIZAÇÃO - DESIGN GLASSMORPHISM
+   ✅ Problema: Interface datada e sem profundidade visual
+   ✅ Solução: Implementado backdrop-filter, rgba backgrounds, múltiplas sombras
+   ✅ Resultado: Design moderno com efeito de vidro fosco
+
+5️⃣ FASE INTERATIVIDADE - MICRO-ANIMAÇÕES
+   ✅ Problema: Elementos estáticos sem feedback visual
+   ✅ Solução: Hover effects, transformações, animações de entrada
+   ✅ Resultado: Interface responsiva com feedback visual em tempo real
+
+6️⃣ FASE RESPONSIVIDADE - ADAPTAÇÃO UNIVERSAL
+   ✅ Problema: Layout quebrava em diferentes tamanhos de tela
+   ✅ Solução: Media queries progressivas de 480px até 1501px+
+   ✅ Resultado: Design funcional em qualquer dispositivo
+
+7️⃣ FASE DOCUMENTAÇÃO - COMENTÁRIOS EDUCATIVOS
+   ✅ Problema: Código sem explicações para aprendizado
+   ✅ Solução: Comentários detalhados em cada propriedade CSS
+   ✅ Resultado: Código autodocumentado para fins educativos
+
+🛠️ TÉCNICAS UTILIZADAS:
+   • Flexbox para layouts responsivos
+   • CSS Grid para organização de listas
+   • Gradientes lineares e radiais animados
+   • Pseudo-elementos para efeitos visuais
+   • Backdrop-filter para glassmorphism
+   • Keyframes para animações customizadas
+   • Media queries para responsividade
+   • Transform e transition para interatividade
+
+🎨 PALETA DE CORES:
+   • Azul (#667eea) - cor primária
+   • Roxo (#764ba2) - cor secundária  
+   • Rosa (#f093fb, #f5576c) - botões de ação
+   • Ciano (#4facfe, #00f2fe) - botão limpar
+   • Gradiente multicolor para título animado
+
+💡 FILOSOFIA DE DESIGN:
+   • Mobile-first approach
+   • Acessibilidade visual (contrastes adequados)
+   • Feedback visual imediato
+   • Consistência em espaçamentos e proporções
+   • Hierarquia visual clara
+
+📚 GLOSSÁRIO EDUCATIVO:
+
+🔹 GLASSMORPHISM: Estilo de design que simula vidro fosco usando:
+   - backdrop-filter: blur() = desfoque no fundo
+   - background: rgba() = transparência controlada
+   - border: rgba() = bordas semi-transparentes
+   - box-shadow = sombras suaves para profundidade
+
+🔹 PSEUDO-ELEMENTOS (::before, ::after):
+   - Elementos virtuais criados via CSS (não existem no HTML)
+   - Sempre precisam de content: "" para existir
+   - Úteis para efeitos decorativos sem poluir HTML
+
+🔹 PSEUDO-CLASSES (:hover, :focus, :active):
+   - Estados especiais de elementos (não criam elementos novos)
+   - Respondem a interações do usuário
+   - Fundamentais para feedback visual
+
+🔹 FLEXBOX vs GRID:
+   - Flexbox = layout unidimensional (linha OU coluna)
+   - Grid = layout bidimensional (linhas E colunas)
+   - Use flexbox para alinhar, grid para estruturar
+
+🔹 UNIDADES CSS:
+   - px = pixels absolutos (tamanho fixo)
+   - % = porcentagem do elemento pai
+   - vh/vw = porcentagem da viewport (tela)
+   - rem = relativo ao font-size raiz
+   - em = relativo ao font-size do elemento
+
+🔹 Z-INDEX: Controla sobreposição de elementos
+   - Valores maiores ficam "na frente"
+   - Só funciona com position: relative/absolute/fixed
+   - Use valores espaçados (10, 20, 30) para facilitar inserções
+
+💡 DICAS DE BOAS PRÁTICAS:
+
+✅ ORGANIZAÇÃO:
+   • Agrupe CSS por funcionalidade (reset, layout, componentes)
+   • Use comentários para separar seções
+   • Mantenha ordem lógica: posicionamento → dimensões → visual → animações
+
+✅ PERFORMANCE:
+   • Prefira transforms a alterar propriedades de layout
+   • Use will-change para otimizar animações pesadas
+   • Minimize repintura com transform e opacity
+
+✅ RESPONSIVIDADE:
+   • Mobile-first: comece com mobile, depois desktop
+   • Use em/rem para textos, px para detalhes
+   • Teste em dispositivos reais, não só no navegador
+
+✅ ACESSIBILIDADE:
+   • Mantenha contraste mínimo 4.5:1 para textos
+   • Use focus visível para navegação por teclado
+   • Não dependa apenas de cor para transmitir informação
+
+🎨 SISTEMA DE CORES EXPLICADO:
+
+📊 Formatos de cor utilizados:
+   • HEX: #667eea (hexadecimal - formato compacto)
+   • RGBA: rgba(255, 255, 255, 0.9) (red, green, blue, alpha)
+   • HSL: hsl(240, 75%, 65%) (hue, saturation, lightness)
+
+🌈 Paleta harmoniosa escolhida:
+   • #667eea (azul) + #764ba2 (roxo) = complementares análogas
+   • #f093fb (rosa) + #f5576c (coral) = tons quentes vibrantes  
+   • #4facfe (ciano) + #00f2fe (azul claro) = tons frios suaves
+
+⚖️ Transparências estratégicas:
+   • rgba(255, 255, 255, 0.95) = branco 95% (container principal)
+   • rgba(255, 255, 255, 0.9) = branco 90% (elementos internos)
+   • rgba(0, 0, 0, 0.1) = preto 10% (sombras sutis)
+   • rgba(0, 0, 0, 0.3) = preto 30% (sombras pronunciadas)
+
+===================================================================================
+*/
+
+/* ===== VARIÁVEIS CSS (CSS CUSTOM PROPERTIES) ===== */
+/*
+🎨 ALTERNATIVA MODERNA: Usando CSS Custom Properties
+
+:root {
+  --cor-primaria: #667eea;
+  --cor-secundaria: #764ba2;
+  --cor-rosa: #f093fb;
+  --cor-coral: #f5576c;
+  --cor-ciano: #4facfe;
+  --cor-azul-claro: #00f2fe;
+  
+  --branco-95: rgba(255, 255, 255, 0.95);
+  --branco-90: rgba(255, 255, 255, 0.9);
+  --preto-10: rgba(0, 0, 0, 0.1);
+  --preto-30: rgba(0, 0, 0, 0.3);
+  
+  --border-radius-pequeno: 15px;
+  --border-radius-medio: 20px;
+  --border-radius-grande: 25px;
+  
+  --sombra-suave: 0 8px 25px var(--preto-10);
+  --sombra-pronunciada: 0 15px 40px var(--preto-30);
+  
+  --transicao-padrao: all 0.3s ease;
+  --transicao-suave: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+💡 VANTAGENS DAS VARIÁVEIS CSS:
+   ✅ Fácil manutenção (muda em um lugar, afeta tudo)
+   ✅ Consistência visual automática
+   ✅ Tema dinâmico (dark/light mode)
+   ✅ Melhor legibilidade do código
+   ✅ Compatibilidade nativa (sem preprocessador)
+
+🔧 COMO USAR:
+   background: var(--cor-primaria);
+   border-radius: var(--border-radius-medio);
+   transition: var(--transicao-padrao);
+*/
+
+/* ===== RESET E BASE ===== */
+* {
+  box-sizing: border-box; /* Inclui padding e border no cálculo da largura total dos elementos */
+}
+
 body {
-  /* Estilo para o corpo da página */
-  font-family: Arial, sans-serif;
-  background-color: #d0f5c4;
-  margin: 0;
-  padding: 20px;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; /* Imagem de fundo fixa */
-  background-repeat: no-repeat;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, Arial, sans-serif; /* Define hierarquia de fontes (primeira disponível será usada) */
+  background: linear-gradient(
+    135deg,
+    #667eea 0%,
+    #764ba2 100%
+  ); /* Gradiente diagonal de azul para roxo */
+  background-attachment: fixed; /* Fundo fixo quando a página rola */
+  margin: 0; /* Remove margens padrão do navegador */
+  padding: 20px; /* Espaçamento interno de 20px em todos os lados */
+  min-height: 100vh; /* Altura mínima igual à altura da viewport (tela) */
+  position: relative; /* Permite posicionamento de elementos filhos absolutos */
+  overflow-x: hidden; /* Esconde scroll horizontal se houver */
 }
 
-/* Parte superior: título e imagem lado a lado, com fundo e borda compartilhados */
+body::before {
+  /* PSEUDO-ELEMENTO: cria elemento virtual ANTES do conteúdo do body */
+  content: ""; /* Cria um pseudo-elemento vazio */
+  position: fixed; /* Posição fixa na tela (não rola) */
+  top: 0; /* Posiciona no topo */
+  left: 0; /* Posiciona na esquerda */
+  right: 0; /* Estende até a direita */
+  bottom: 0; /* Estende até embaixo */
+  background: radial-gradient(
+      /* Gradiente radial (circular) */ circle at 20% 80%,
+      /* Círculo posicionado em 20% horizontal, 80% vertical */
+        rgba(120, 200, 255, 0.2) 0%,
+      /* Azul claro semi-transparente no centro */ transparent 50%
+        /* Transparente a partir de 50% do raio */
+    ),
+    radial-gradient(
+      /* Segundo gradiente radial */ circle at 80% 20%,
+      /* Círculo no canto superior direito */ rgba(255, 120, 200, 0.2) 0%,
+      /* Rosa semi-transparente */ transparent 50%
+    ),
+    radial-gradient(
+      /* Terceiro gradiente radial */ circle at 40% 40%,
+      /* Círculo no centro-esquerda */ rgba(120, 255, 180, 0.1) 0%,
+      /* Verde claro muito transparente */ transparent 50%
+    );
+  pointer-events: none; /* Elemento não interfere com cliques do mouse */
+  z-index: -1; /* Coloca atrás de todos os outros elementos */
+}
+
+/* ===== CONTAINER PRINCIPAL ===== */
+/*
+🪟 EFEITO GLASSMORPHISM EXPLICADO:
+
+O glassmorphism simula vidro fosco moderno através de 4 propriedades principais:
+
+1️⃣ TRANSPARÊNCIA: background: rgba(255, 255, 255, 0.95)
+   • rgba permite controlar a opacidade (95% opaco, 5% transparente)
+   • Cria o efeito de "ver através" do elemento
+
+2️⃣ DESFOQUE: backdrop-filter: blur(20px)
+   • Desfoca tudo que está ATRÁS do elemento
+   • Simula o efeito de vidro fosco
+   • Valor maior = mais desfoque
+
+3️⃣ BORDAS SUAVES: border-radius: 25px
+   • Bordas arredondadas são essenciais para o estilo moderno
+   • Evita cantos vivos que quebram a ilusão de vidro
+
+4️⃣ SOMBRAS SUTIS: box-shadow com baixa opacidade
+   • Cria profundidade sem exagero
+   • Simula a sombra que um vidro real faria
+
+💡 DICA: Sempre combine essas 4 propriedades para glassmorphism eficaz!
+*/
+
+.container {
+  max-width: 1000px; /* Largura máxima de 1000px (não cresce além disso) */
+  margin: 0 auto; /* Centraliza horizontalmente (0 top/bottom, auto left/right) */
+  background: rgba(255, 255, 255, 0.95); /* Fundo branco com 95% de opacidade */
+  backdrop-filter: blur(20px); /* Efeito de desfoque no que está atrás */
+  border-radius: 25px; /* Bordas arredondadas de 25px */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); /* Sombra: 0px horizontal, 20px vertical, 40px blur, preto 10% */
+  padding: 30px; /* Espaçamento interno de 30px */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Borda branca semi-transparente */
+}
+
+/* ===== HEADER/TÍTULO ===== */
 #parteSuperiorTitulo {
-  display: flex; /* Flexbox para alinhar título e imagem lado a lado */
-  align-items: center; /* Alinha verticalmente o conteúdo */
-  justify-content: center; /* Centraliza o conteúdo */
-  gap: 60px; /* Espaçamento entre título e imagem */
-  margin: -20px;
-  margin-bottom: 30px;
-  background-color: #4caf50;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  padding: 15px;
+  display: flex; /* Layout flexível (elementos lado a lado) */
+  align-items: center; /* Alinha itens verticalmente no centro */
+  justify-content: space-between; /* Distribui espaço: título à esquerda, imagem à direita */
+  margin: -30px -30px 40px -30px; /* Margem: -30px top/left/right, 40px bottom (sai das bordas do container) */
+  background: linear-gradient(
+    135deg,
+    #667eea 0%,
+    #764ba2 100%
+  ); /* Gradiente diagonal azul para roxo */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2),
+    /* Sombra externa */ inset 0 1px 0 rgba(255, 255, 255, 0.1); /* Sombra interna (highlight no topo) */
+  padding: 30px 25px; /* Espaçamento interno: 30px top/bottom, 25px left/right */
+  flex-wrap: wrap; /* Permite quebra de linha em telas pequenas */
+  border-radius: 25px 25px 0 0; /* Bordas arredondadas apenas no topo */
+  position: relative; /* Permite posicionamento de pseudo-elementos */
+  overflow: hidden; /* Esconde conteúdo que sai das bordas */
+  gap: 20px; /* Espaço de 20px entre os itens flex */
 }
 
-/* Título sem fundo próprio, só cor do texto e tamanho */
+#parteSuperiorTitulo::before {
+  /* PSEUDO-ELEMENTO: cria elemento virtual ANTES do conteúdo do cabeçalho */
+  content: ""; /* Cria pseudo-elemento vazio */
+  position: absolute; /* Posição absoluta dentro do elemento pai */
+  top: 0; /* Colado no topo */
+  left: 0; /* Colado na esquerda */
+  right: 0; /* Estende até a direita */
+  bottom: 0; /* Estende até embaixo */
+  background: linear-gradient(
+    /* Gradiente linear diagonal */ 45deg,
+    /* Ângulo de 45 graus */ transparent 30%,
+    /* Transparente até 30% */ rgba(255, 255, 255, 0.1) 50%,
+    /* Branco semi-transparente no meio */ transparent 70%
+      /* Transparente depois de 70% */
+  );
+  animation: shimmer 3s ease-in-out infinite; /* Animação shimmer de 3s, suave, infinita */
+}
+
+.titulo-centralizado {
+  flex: 1; /* Ocupa todo o espaço disponível (cresce para preencher) */
+  display: flex; /* Layout flexível */
+  justify-content: center; /* Centraliza conteúdo horizontalmente */
+  align-items: center; /* Centraliza conteúdo verticalmente */
+  min-width: 250px; /* Largura mínima de 250px */
+  max-width: 65%; /* Largura máxima de 65% do container */
+  position: relative; /* Permite posicionamento de elementos filhos */
+  z-index: 2; /* Fica acima do pseudo-elemento ::before */
+}
+
 h1 {
-  margin: 0;
-  font-size: 50px;
-  color: #fff;
-  padding: 0;
-  font-style: italic; /* Estilo itálico para o título */
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  margin: 0; /* Remove margem padrão */
+  padding: 0; /* Remove padding padrão */
+  font-size: 30px; /* Tamanho da fonte em pixels */
+  font-style: italic; /* Texto em itálico */
+  font-family: "Press Start 2P", "Orbitron", monospace, fantasy, cursive,
+    /* Hierarquia de fontes: primeira disponível será usada */ sans-serif; /* Fonte sem serifa como último recurso */
+  text-align: center; /* Alinha texto no centro */
+  letter-spacing: 1px; /* Espaço de 1px entre as letras */
+  background: linear-gradient(
+    /* Gradiente linear para o texto */ 45deg,
+    /* Ângulo diagonal de 45 graus */ #ff6b6b,
+    /* Vermelho coral */ #4ecdc4,
+    /* Turquesa */ #45b7d1,
+    /* Azul claro */ #96ceb4,
+    /* Verde menta */ #ffeaa7,
+    /* Amarelo suave */ #dda0dd,
+    /* Lilás */ #ff6b6b /* Volta ao vermelho coral (loop) */
+  );
+  background-size: 400% 400%; /* Faz o gradiente 4x maior para permitir animação */
+  -webkit-background-clip: text; /* Aplica gradiente apenas no texto (Webkit) */
+  -webkit-text-fill-color: transparent; /* Torna o texto transparente para mostrar o gradiente */
+  background-clip: text; /* Versão padrão da propriedade acima */
+  animation: gradient 4s ease infinite; /* Animação do gradiente: 4s, suave, infinita */
+  position: relative; /* Permite posicionamento de pseudo-elementos */
+  filter: drop-shadow(
+    0 0 20px rgba(255, 255, 255, 0.3)
+  ); /* Sombra externa branca suave */
+  word-wrap: break-word; /* Quebra palavras longas se necessário */
+  line-height: 1.1; /* Altura da linha 1.1x o tamanho da fonte */
 }
 
-/* Imagem segue igual */
-#amigos {
-  height: 200px;
-  width: 500px;
-  border-radius: 20px;
+#parteSuperiorTitulo img {
+  width: 150px; /* Largura fixa da imagem */
+  border-radius: 15px; /* Bordas arredondadas */
+  flex-shrink: 0; /* Impede que a imagem diminua no flexbox */
+  margin-left: 15px; /* Margem à esquerda para espaçamento */
 }
 
-/* Container dos botões */
+/* ===== ANIMAÇÕES APRIMORADAS ===== */
+/*
+🎬 EXPLICAÇÃO DAS ANIMAÇÕES:
+
+📝 Como funcionam os @keyframes:
+   • 0% = estado inicial da animação
+   • 50% = estado no meio da animação  
+   • 100% = estado final da animação
+   • Pode usar from (0%) e to (100%) também
+
+⚡ Propriedades animáveis com boa performance:
+   ✅ transform (translate, scale, rotate)
+   ✅ opacity (transparência)
+   ✅ filter (blur, brightness)
+   ❌ width, height, top, left (causam reflow)
+
+🔄 Tipos de timing-function:
+   • ease = lento → rápido → lento
+   • linear = velocidade constante
+   • ease-in = começa lento
+   • ease-out = termina lento
+   • cubic-bezier() = curva personalizada
+*/
+
+@keyframes gradient {
+  /* ANIMAÇÃO: move gradiente do título */
+  0%,
+  100% {
+    background-position: 0% 50%; /* Posição inicial e final do gradiente */
+  }
+  50% {
+    background-position: 100% 50%; /* Posição no meio da animação */
+  }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3); /* Brilho inicial */
+  }
+  100% {
+    text-shadow: 0 0 40px rgba(255, 255, 255, 0.7); /* Brilho máximo no final */
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%); /* Inicia fora da tela à esquerda */
+  }
+  100% {
+    transform: translateX(100%); /* Termina fora da tela à direita */
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px); /* Posição inicial e final */
+  }
+  50% {
+    transform: translateY(-10px); /* Posição no meio (flutuando) */
+  }
+}
+
+/* ===== FORMULÁRIO MODERNO ===== */
+#nomeInput {
+  width: 100%; /* Largura total do container */
+  padding: 18px 25px; /* Espaçamento interno: 18px vertical, 25px horizontal */
+  margin: 25px 0; /* Margem: 25px vertical, 0 horizontal */
+  border: none; /* Remove borda padrão */
+  border-radius: 50px; /* Bordas arredondadas */
+  text-align: center; /* Centraliza o texto */
+  font-size: 18px; /* Tamanho da fonte */
+  font-weight: 500; /* Peso da fonte (semi-negrito) */
+  box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+  background: rgba(255, 255, 255, 0.9); /* Fundo branco com 90% de opacidade */
+  backdrop-filter: blur(10px); /* Desfoque no fundo */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+    /* Sombra externa suave */ inset 0 2px 0 rgba(255, 255, 255, 0.3); /* Sombra interna branca no topo */
+  transition: all 0.3s ease; /* Transição suave para todas as propriedades */
+  outline: none; /* Remove outline padrão no foco */
+}
+
+#nomeInput:focus {
+  /* PSEUDO-CLASSE: estilo aplicado quando o campo está FOCADO (clicado) */
+  transform: translateY(-2px); /* Move 2px para cima quando focado */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15),
+    /* Sombra maior e mais intensa */ 0 0 0 3px rgba(102, 126, 234, 0.3); /* Anel de foco azul */
+  background: rgba(255, 255, 255, 1); /* Fundo totalmente opaco quando focado */
+}
+
+#nomeInput::placeholder {
+  /* PSEUDO-ELEMENTO: estiliza o texto de EXEMPLO dentro do campo */
+  color: #999; /* Cor cinza para o texto placeholder */
+  font-style: italic; /* Placeholder em itálico */
+}
+
+/* ===== BOTÕES PREMIUM ===== */
 .botoes-container {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
+  display: flex; /* Layout flexível */
+  justify-content: center; /* Centraliza os botões horizontalmente */
+  gap: 20px; /* Espaço de 20px entre os botões */
+  margin: 30px 0; /* Margem: 30px vertical, 0 horizontal */
+  flex-wrap: wrap; /* Permite quebra de linha em telas pequenas */
 }
 
-/* Botões - estilos comuns */
 .botao {
-  display: inline-block;
-  margin: 10px 5px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px 30px; /* Espaçamento interno: 15px vertical, 30px horizontal */
+  border: none; /* Remove borda padrão */
+  border-radius: 50px; /* Bordas arredondadas */
+  color: white; /* Cor do texto branca */
+  font-size: 16px; /* Tamanho da fonte */
+  font-weight: 600; /* Peso da fonte (semi-negrito) */
+  cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+  text-align: center; /* Centraliza o texto */
+  min-width: 140px; /* Largura mínima */
+  position: relative; /* Permite posicionamento de pseudo-elementos */
+  overflow: hidden; /* Esconde conteúdo que sai da área do botão */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Transição suave customizada */
+  text-transform: uppercase; /* Texto em maiúsculas */
+  letter-spacing: 1px; /* Espaçamento entre letras */
+  backdrop-filter: blur(10px); /* Desfoque no fundo */
+}
+
+.botao::before {
+  /* PSEUDO-ELEMENTO: cria elemento virtual ANTES do conteúdo do botão (efeito brilho) */
+  content: ""; /* Pseudo-elemento vazio */
+  position: absolute; /* Posicionamento absoluto dentro do botão */
+  top: 0; /* Alinha ao topo */
+  left: -100%; /* Inicia fora da tela à esquerda */
+  width: 100%; /* Largura total do botão */
+  height: 100%; /* Altura total do botão */
+  background: linear-gradient(
+    /* Gradiente para efeito de brilho */ 90deg,
+    /* Direção horizontal */ transparent,
+    /* Transparente no início */ rgba(255, 255, 255, 0.3),
+    /* Branco semi-transparente no meio */ transparent
+      /* Transparente no final */
+  );
+  transition: left 0.5s; /* Transição da propriedade left */
+}
+
+.botao:hover::before {
+  /* PSEUDO-CLASSE + PSEUDO-ELEMENTO: move o brilho quando o mouse PASSA SOBRE o botão */
+  left: 100%; /* Move o brilho para fora da tela à direita */
+}
+
+.botao:hover {
+  /* PSEUDO-CLASSE: estilo aplicado quando o mouse PASSA SOBRE o botão */
+  transform: translateY(-3px) scale(1.05); /* Move para cima e aumenta 5% */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25); /* Sombra mais pronunciada */
+  animation: float 1s ease-in-out infinite; /* Animação de flutuação */
+}
+
+.botao:active {
+  /* PSEUDO-CLASSE: estilo aplicado quando o botão está sendo PRESSIONADO */
+  transform: translateY(-1px) scale(1.02); /* Efeito quando pressionado */
 }
 
 .botao:disabled {
-  cursor: not-allowed;
-  opacity: 0.6;
-  color: #ccc;
-  background-color: #888 !important; /* !important para garantir a prioridade */
+  /* PSEUDO-CLASSE: estilo aplicado quando o botão está DESABILITADO */
+  cursor: not-allowed; /* Cursor indicando que não pode clicar */
+  opacity: 0.5; /* Transparência de 50% */
+  transform: none !important; /* Remove transformações */
+  animation: none !important; /* Remove animações */
+  background: linear-gradient(135deg, #999, #666) !important; /* Fundo cinza */
 }
 
-#nomeInput {
-  /* Estilo para o campo de entrada de nome */
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 2px solid #4caf50;
-  border-radius: 30px;
-  text-align: center;
-  font-size: 18px;
-  box-sizing: border-box; /* Inclui padding e border no cálculo da largura total */
-}
-
-/* Botões - estilos individuais e efeitos */
 #adicionarBtn {
-  background-color: #4caf50;
-}
-#adicionarBtn:hover {
-  background-color: #45a049;
+  background: linear-gradient(
+    135deg,
+    #667eea 0%,
+    #764ba2 100%
+  ); /* Gradiente azul-roxo */
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4); /* Sombra azul */
 }
 
 #sortearBtn {
-  background-color: #2196f3;
-}
-#sortearBtn:hover {
-  background-color: #0b7dda;
+  background: linear-gradient(
+    135deg,
+    #f093fb 0%,
+    #f5576c 100%
+  ); /* Gradiente rosa-vermelho */
+  box-shadow: 0 8px 25px rgba(245, 87, 108, 0.4); /* Sombra rosa */
 }
 
 #limparBtn {
-  background-color: #f44336;
-}
-#limparBtn:hover {
-  background-color: #d32f2f;
+  background: linear-gradient(
+    135deg,
+    #4facfe 0%,
+    #00f2fe 100%
+  ); /* Gradiente azul-ciano */
+  box-shadow: 0 8px 25px rgba(79, 172, 254, 0.4); /* Sombra azul */
 }
 
-/* Lista de nomes */
+/* ===== LISTA DE NOMES ELEGANTE ===== */
 #listaNomes {
-  margin-top: 20px;
-  list-style-type: none;
-  padding: 0;
+  margin-top: 30px; /* Margem superior */
+  list-style: none; /* Remove marcadores da lista */
+  padding: 0; /* Remove padding padrão */
+  display: grid; /* Layout em grade */
+  gap: 15px; /* Espaço entre itens da grade */
 }
 
-/* Itens da lista */
 #listaNomes li {
-  font-size: 18px;
-  background-color: #e0f7fa;
-  padding: 10px;
-  margin: 5px 0;
-  border-radius: 30px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  text-align: center;
+  font-size: 18px; /* Tamanho da fonte */
+  font-weight: 500; /* Peso da fonte (semi-negrito) */
+  background: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
+  backdrop-filter: blur(10px); /* Desfoque no fundo */
+  padding: 20px; /* Espaçamento interno */
+  border-radius: 20px; /* Bordas arredondadas */
+  text-align: center; /* Centraliza o texto */
+  position: relative; /* Permite pseudo-elementos */
+  overflow: hidden; /* Esconde conteúdo extra */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Transição suave customizada */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Borda branca semi-transparente */
 }
+
+#listaNomes li::before {
+  /* PSEUDO-ELEMENTO: cria elemento virtual ANTES de cada item da lista (barra colorida) */
+  content: ""; /* Pseudo-elemento vazio */
+  position: absolute; /* Posicionamento absoluto */
+  top: 0; /* Alinha ao topo */
+  left: 0; /* Alinha à esquerda */
+  right: 0; /* Alinha à direita */
+  height: 3px; /* Altura de 3px */
+  background: linear-gradient(
+    90deg,
+    #667eea,
+    #764ba2,
+    #f093fb,
+    #f5576c
+  ); /* Gradiente colorido */
+  background-size: 300% 100%; /* Tamanho do gradiente para animação */
+  animation: gradient 3s ease infinite; /* Animação do gradiente */
+}
+
+#listaNomes li:hover {
+  /* PSEUDO-CLASSE: estilo aplicado quando o mouse PASSA SOBRE um item da lista */
+  transform: translateY(-5px) scale(1.02); /* Move para cima e aumenta ligeiramente */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
+  background: rgba(255, 255, 255, 1); /* Fundo totalmente opaco */
+}
+
+#listaNomes li:nth-child(even) {
+  /* PSEUDO-CLASSE: seleciona itens PARES (2º, 4º, 6º...) da lista */
+  animation-delay: 0.1s; /* Atraso na animação para itens pares */
+}
+
+#listaNomes li:nth-child(odd) {
+  /* PSEUDO-CLASSE: seleciona itens ÍMPARES (1º, 3º, 5º...) da lista */
+  animation-delay: 0.2s; /* Atraso na animação para itens ímpares */
+}
+
+/* ===== RESULTADO DO SORTEIO ===== */
+#resultado {
+  margin-top: 30px; /* Margem superior */
+  padding: 20px; /* Espaçamento interno */
+  text-align: center; /* Centraliza o texto */
+  font-size: 24px; /* Tamanho da fonte */
+  font-weight: bold; /* Texto em negrito */
+  min-height: 60px; /* Altura mínima */
+  border-radius: 20px; /* Bordas arredondadas */
+  transition: all 0.5s ease; /* Transição suave para todas as propriedades */
+  animation: resultadoEntrada 0.8s ease-out; /* Animação de entrada */
+}
+
+#resultado:not(:empty) {
+  /* PSEUDO-CLASSE: aplica estilo quando o resultado NÃO está vazio (tem conteúdo) */
+  background: linear-gradient(
+    135deg,
+    #ff6b6b,
+    #4ecdc4,
+    #45b7d1
+  ); /* Gradiente colorido quando há conteúdo */
+  background-size: 200% 200%; /* Tamanho do gradiente para animação */
+  color: white; /* Cor do texto branca */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra do texto */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra da caixa */
+  border: 3px solid #fff; /* Borda branca */
+  animation: resultadoEntrada 0.8s ease-out,
+    /* Animação de entrada */ gradientePulse 2s ease-in-out infinite; /* Animação de pulsação */
+}
+
+#resultado:empty {
+  /* PSEUDO-CLASSE: aplica estilo quando o resultado está VAZIO (sem conteúdo) */
+  background: transparent; /* Fundo transparente quando vazio */
+  box-shadow: none; /* Remove sombra quando vazio */
+  border: none; /* Remove borda quando vazio */
+}
+
+/* ===== ANIMAÇÕES DO RESULTADO ===== */
+@keyframes resultadoEntrada {
+  0% {
+    opacity: 0; /* Inicia invisível */
+    transform: scale(0.8) translateY(20px); /* Inicia menor e mais abaixo */
+  }
+  50% {
+    transform: scale(1.05); /* Aumenta ligeiramente no meio */
+  }
+  100% {
+    opacity: 1; /* Termina visível */
+    transform: scale(1) translateY(0); /* Tamanho e posição normais */
+  }
+}
+
+@keyframes gradientePulse {
+  0%,
+  100% {
+    background-position: 0% 50%; /* Posição inicial e final do gradiente */
+    transform: scale(1); /* Tamanho normal */
+  }
+  50% {
+    background-position: 100% 50%; /* Posição no meio da animação */
+    transform: scale(1.02); /* Aumenta 2% no meio */
+  }
+}
+
+/* ===== IMAGENS GERAIS ===== */
+#amigos {
+  height: 200px; /* Altura fixa */
+  width: 500px; /* Largura fixa */
+  border-radius: 20px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+/* ===== RESPONSIVIDADE ===== */
+/*
+📱 ESTRATÉGIA DE BREAKPOINTS EXPLICADA:
+
+🎯 Filosofia Mobile-First:
+   • CSS base = mobile (menor tela)
+   • Media queries = desktop (telas maiores)
+   • Vantagem: melhor performance em mobile
+
+📊 Breakpoints escolhidos:
+   • 480px = smartphones pequenos
+   • 768px = tablets em modo retrato  
+   • 1000px = tablets em modo paisagem
+   • 1300px = desktops pequenos
+   • 1500px+ = desktops grandes
+
+🔧 Ajustes por tamanho:
+   • Fonte do título: 28px → 80px (proporcional ao espaço)
+   • Layout: coluna (mobile) → linha (desktop)
+   • Espaçamentos: menores → maiores
+   • Imagens: 120px → 260px
+
+💡 REGRA DE OURO: Teste sempre em dispositivos reais!
+*/
+
+/* Mobile muito pequeno */
+@media (max-width: 480px) {
+  body {
+    padding: 10px; /* Padding reduzido para mobile */
+  }
+
+  .container {
+    padding: 20px; /* Padding interno reduzido */
+    margin: 10px; /* Margem reduzida */
+  }
+
+  #parteSuperiorTitulo {
+    flex-direction: column; /* Alinha verticalmente no mobile */
+    gap: 15px; /* Espaço menor entre elementos */
+    margin: -20px -20px 20px -20px; /* Margem negativa para expandir */
+    border-radius: 15px 15px 0 0; /* Bordas arredondadas apenas no topo */
+  }
+
+  .titulo-centralizado {
+    min-width: auto; /* Remove largura mínima no mobile */
+  }
+
+  #parteSuperiorTitulo img {
+    width: 120px; /* Imagem menor no mobile */
+    order: 2; /* Coloca imagem depois do título */
+  }
+
+  h1 {
+    font-size: 28px !important; /* Título menor no mobile */
+    letter-spacing: 0.5px; /* Espaçamento menor entre letras */
+    line-height: 1.2; /* Altura da linha reduzida */
+  }
+
+  .botoes-container {
+    gap: 10px; /* Espaço menor entre botões */
+    flex-direction: column; /* Botões em coluna no mobile */
+    align-items: center; /* Centraliza botões */
+  }
+
+  .botao {
+    min-width: 200px; /* Largura mínima maior para mobile */
+    padding: 12px 20px; /* Padding reduzido */
+    font-size: 14px; /* Fonte menor */
+  }
+
+  #resultado {
+    font-size: 18px; /* Fonte menor para resultado */
+    padding: 15px; /* Padding reduzido */
+    margin-top: 20px; /* Margem superior reduzida */
+  }
+}
+
+/* Mobile */
+@media (min-width: 481px) and (max-width: 768px) {
+  #parteSuperiorTitulo {
+    flex-direction: column; /* Layout vertical para tablets pequenos */
+    gap: 20px; /* Espaço entre elementos */
+  }
+
+  .titulo-centralizado {
+    min-width: auto; /* Remove largura mínima */
+  }
+
+  #parteSuperiorTitulo img {
+    width: 150px; /* Tamanho da imagem para tablets */
+    order: 2; /* Posiciona imagem após o título */
+  }
+
+  h1 {
+    font-size: 40px !important; /* Título maior que mobile */
+    line-height: 1.1; /* Altura da linha ajustada */
+  }
+
+  #resultado {
+    font-size: 20px; /* Fonte do resultado para tablet */
+    padding: 18px; /* Padding para tablet */
+  }
+}
+
+/* Tablet pequeno */
+@media (min-width: 769px) and (max-width: 1000px) {
+  #parteSuperiorTitulo img {
+    width: 180px; /* Imagem maior para tablets médios */
+  }
+  h1 {
+    font-size: 50px !important; /* Título maior para tablets médios */
+  }
+}
+
+/* Desktop pequeno */
+@media (min-width: 1001px) and (max-width: 1300px) {
+  #parteSuperiorTitulo img {
+    width: 200px; /* Imagem para desktop pequeno */
+  }
+  h1 {
+    font-size: 60px !important; /* Título para desktop pequeno */
+  }
+}
+
+/* Desktop médio */
+@media (min-width: 1301px) and (max-width: 1500px) {
+  #parteSuperiorTitulo img {
+    width: 240px; /* Imagem maior para desktop médio */
+  }
+  h1 {
+    font-size: 70px !important; /* Título maior para desktop médio */
+  }
+}
+
+/* Desktop grande */
+@media (min-width: 1501px) {
+  #parteSuperiorTitulo img {
+    width: 260px; /* Imagem máxima para desktop grande */
+  }
+  h1 {
+    font-size: 80px !important; /* Título máximo para desktop grande */
+  }
+}
+
+/*
+===================================================================================
+� TROUBLESHOOTING E DEBUG - PROBLEMAS COMUNS E SOLUÇÕES
+===================================================================================
+
+❌ PROBLEMA: "Meu glassmorphism não aparece"
+✅ SOLUÇÃO: 
+   • Verifique se backdrop-filter é suportado: @supports (backdrop-filter: blur(1px))
+   • Use -webkit-backdrop-filter para Safari
+   • Certifique-se que há conteúdo atrás para ser desfocado
+
+❌ PROBLEMA: "Animações estão lentas/travando"
+✅ SOLUÇÃO:
+   • Use transform/opacity em vez de width/height/top/left
+   • Adicione will-change: transform nas animações pesadas
+   • Evite animar muitos elementos simultaneamente
+
+❌ PROBLEMA: "Layout quebra no mobile"
+✅ SOLUÇÃO:
+   • Use overflow-x: hidden no body
+   • Defina min-width/max-width apropriados
+   • Teste com flex-wrap: wrap nos containers
+
+❌ PROBLEMA: "Fontes não carregam"
+✅ SOLUÇÃO:
+   • Verifique conexão com Google Fonts
+   • Defina font-display: swap para performance
+   • Sempre tenha fallbacks: Arial, sans-serif
+
+❌ PROBLEMA: "Cores do gradiente não aparecem"
+✅ SOLUÇÃO:
+   • Use -webkit-background-clip: text para compatibilidade
+   • Defina -webkit-text-fill-color: transparent
+   • Certifique-se que background-size está configurado
+
+🛠️ FERRAMENTAS DE DEBUG:
+   • F12 DevTools → Computed → veja valores finais
+   • Console → getComputedStyle(element) → valores JavaScript
+   • Lighthouse → performance e acessibilidade
+   • Can I Use → compatibilidade de propriedades
+
+===================================================================================
+�📚 RECURSOS PARA CONTINUAR APRENDENDO
+===================================================================================
+
+🔗 DOCUMENTAÇÃO OFICIAL:
+   • MDN Web Docs: https://developer.mozilla.org/pt-BR/docs/Web/CSS
+   • CSS Tricks: https://css-tricks.com/
+   • W3Schools: https://www.w3schools.com/css/
+
+🛠️ FERRAMENTAS ÚTEIS:
+   • Can I Use: https://caniuse.com/ (compatibilidade de propriedades)
+   • CSS Grid Generator: https://cssgrid-generator.netlify.app/
+   • Flexbox Froggy: https://flexboxfroggy.com/ (jogo para aprender flexbox)
+   • Grid Garden: https://cssgridgarden.com/ (jogo para aprender grid)
+
+🎨 INSPIRAÇÃO DE DESIGN:
+   • Dribbble: https://dribbble.com/
+   • Behance: https://www.behance.net/
+   • UI Movement: https://uimovement.com/
+
+🔍 CONCEITOS PARA APROFUNDAR:
+   ✅ CSS Architecture (BEM, SMACSS, OOCSS)
+   ✅ CSS Preprocessing (Sass, Less)
+   ✅ CSS-in-JS (Styled Components, Emotion)
+   ✅ CSS Frameworks (Tailwind, Bootstrap)
+   ✅ CSS Custom Properties (Variáveis CSS)
+   ✅ CSS Container Queries
+   ✅ CSS Subgrid
+   ✅ CSS Houdini
+
+🚀 PRÓXIMOS PASSOS SUGERIDOS:
+   1. Experimente modificar as cores e animações
+   2. Adicione novos efeitos hover nos elementos
+   3. Implemente tema dark/light
+   4. Otimize para melhor acessibilidade
+   5. Adicione animações de micro-interação
+   6. Experimente com CSS Grid Layout
+   7. Implemente Progressive Enhancement
+
+🎯 EXERCÍCIOS PRÁTICOS PARA FIXAR O APRENDIZADO:
+
+📝 NÍVEL INICIANTE:
+   □ Mude as cores do gradiente do título
+   □ Altere o border-radius dos botões
+   □ Troque as fontes por outras do Google Fonts
+   □ Modifique a velocidade das animações (duration)
+
+📝 NÍVEL INTERMEDIÁRIO:
+   □ Crie um novo botão com gradiente diferente
+   □ Adicione hover effect nos itens da lista
+   □ Implemente um loader animado
+   □ Crie uma versão dark theme
+
+📝 NÍVEL AVANÇADO:
+   □ Converta todas as cores para CSS Custom Properties
+   □ Adicione animações de entrada com intersection observer
+   □ Implemente smooth scrolling entre seções
+   □ Crie variantes de componentes usando data-attributes
+
+📝 DESAFIOS EXTRAS:
+   □ Adicione suporte a high contrast mode
+   □ Implemente reduced motion para acessibilidade
+   □ Crie um sistema de grid personalizado
+   □ Adicione support para Right-to-Left (RTL)
+
+💡 LEMBRE-SE:
+   • A prática leva à perfeição
+   • Comece simples, evolua gradualmente  
+   • Sempre pense na experiência do usuário
+   • Teste em múltiplos dispositivos e navegadores
+   • O código limpo e bem documentado é um investimento futuro
+
+💾 SNIPPETS DE CÓDIGO ALTERNATIVOS ÚTEIS:
+
+🌙 DARK THEME TOGGLE:
+   @media (prefers-color-scheme: dark) {
+     :root {
+       --bg-color: #1a1a1a;
+       --text-color: #ffffff;
+       --container-bg: rgba(0, 0, 0, 0.8);
+     }
+   }
+
+⚡ PERFORMANCE OPTIMIZATION:
+   .animacao-pesada {
+     will-change: transform;
+     transform: translateZ(0);
+   }
+
+   @media (prefers-reduced-motion: reduce) {
+     * { animation: none !important; }
+   }
+
+🎨 ALTERNATIVAS DE GRADIENTE:
+   background: conic-gradient(from 0deg, #ff6b6b, #4ecdc4, #45b7d1, #ff6b6b);
+   background: linear-gradient(45deg, #ff6b6b 0%, #4ecdc4 25%, #45b7d1 50%);
+
+🔍 CSS DEBUGGING:
+   * { outline: 1px solid red !important; }
+   .debug-grid { 
+     background-image: linear-gradient(rgba(255,0,0,0.1) 1px, transparent 1px);
+     background-size: 20px 20px;
+   }
+
+===================================================================================
+*/
