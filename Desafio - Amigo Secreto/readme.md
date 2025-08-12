@@ -1,9 +1,9 @@
-Desafio amigo secreto
+O desafio do amigo secreto foi desenvolvido de forma bastante simples: o usuário insere quantos nomes quiser clicando no botão "ADICIONAR", e ao clicar em "SORTEAR", o programa seleciona aleatoriamente entre os nomes cadastrados.
 
-Programa funciona de uma forma muito simples, o usuário coloca quantos nomes quiser clicando no botão "ADICIONAR" e ao clicar no botão "SORTEAR", ele escolhe aleatoriamente os nomes colocados.
+Grande parte do CSS foi elaborada com o auxílio da IA, com o objetivo de criar uma interface visualmente agradável e bem estruturada. Aproveitei esse processo como uma excelente oportunidade de aprendizado, fazendo questão de comentar cada trecho do código para facilitar futuras consultas e estudos.
 
-Parte CSS foi feita com ajuda da IA, justamente para poder apresentar algo visualmente bonito e agradavel, além de ser uma otima forma de aprendizado visto que fiz questão de colocar comentarios em cada parte do codigo.
+No JavaScript, contei com a ajuda da IA especialmente ao lidar com listas, já que era necessário garantir que os nomes sorteados não se repetissem — desafios comuns nesse tipo de lógica.
 
-Na parte do JS tive tambem precisei de ajuda da IA em algumas partes quando estava trabalhando com listas, visto que precisava que sorteasse o nome e este nome não voltasse a repetir no sorteio... problemas desse tipo.
+Já no HTML, as contribuições da IA foram pontuais: ela sugeriu uma fonte diferenciada para o título e ajudou na criação da div container para organizar melhor os elementos.
 
-Parte HTML uma das únicas modificações pela IA foi para colocar a fonte do titulo diferenciada além de adicionar a div container.
+De modo geral, o projeto foi construído manualmente, com a IA atuando como uma parceira de refinamento. A estrutura principal já estava definida — ela apenas ajudou a dar forma, estilo e fluidez aos detalhes finais
